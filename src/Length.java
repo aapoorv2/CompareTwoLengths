@@ -28,7 +28,8 @@ public class Length {
         return this.length1 * unit_to_factor.get(this.unit1) / unit_to_factor.get(this.unit2);
     }
     boolean compare() {
-        return false;
+        double length1 = convert();
+        return length1 >= length2;
     }
 
     boolean invalidUnit(String unit) {

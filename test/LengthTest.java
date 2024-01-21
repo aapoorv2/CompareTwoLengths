@@ -42,4 +42,16 @@ class LengthTest {
         Length length = new Length(100, "m", 20, "km");
         assertEquals(0.1, length.convert());
     }
+    @Test
+    @DisplayName("Compare 100 mm with 1 cm")
+    void convert5() {
+        Length length = new Length(100, "mm", 1, "cm");
+        assertTrue(length.compare());
+    }
+    @Test
+    @DisplayName("Compare 1 m with 1000 cm")
+    void convert6() {
+        Length length = new Length(1, "m", 1000, "cm");
+        assertFalse(length.compare());
+    }
 }
